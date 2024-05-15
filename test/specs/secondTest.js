@@ -7,7 +7,7 @@ describe('UI Controls', () => {
         await $("#password").setValue("learning")
         await $("#signInBtn").click()
         await $(".btn-primary").waitForExist()
-         expect.stringContaining("shop")
+         expect.stringContaining("shop1")
 
 
     })
