@@ -1,6 +1,6 @@
 describe('Web Broswer Testing', () => {
 
-    it('Login Fail Test', async () => {
+    xit('Login Fail Test', async () => {
         await browser.url('https://rahulshettyacademy.com/loginpagePractise/')
         console.log(await browser.getTitle())
         await expect(browser).toHaveTitle(expect.stringContaining(' Rahul Shetty Academy'))
@@ -19,6 +19,19 @@ describe('Web Broswer Testing', () => {
         console.log(await $(".alert-danger").getText())
          expect($('p').stringContaining("username is rahulshettyacademy and Password is "))
          expect($('p').toHaveHTML("username is  and Password is learning"))
+
+
+    })
+
+    it('Login Pass Test', async () => {
+        await browser.url('https://rahulshettyacademy.com/loginpagePractise/')
+        await $("#username").setValue("rahulshettyacademy")
+
+        //await $("input[name='username']").setValue("Ranjan")
+        await $("#password").setValue("learning")
+        await $("#signInBtn").click();
+        await $(".btn-primary").waitForExist()
+         expect.stringContaining("shop")
 
 
     })

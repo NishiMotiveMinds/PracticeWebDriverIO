@@ -6,7 +6,6 @@
             "@wdio/mocha-framework"
         ]
     },
-
     "include": [
           "test/specs/*.js",
           "**/*.json",
