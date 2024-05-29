@@ -19,9 +19,17 @@ export const config = {
     //
     // The path of the spec files will be resolved relative from the directory of
     // of the config file unless it's absolute.
+    before: async () => {
+        await import('expect-webdriverio');
+        global.wdioExpect = global.expect;
+        const chai = await import('chai');
+        global.expect = chai.expect;
+    },
+
+        
     //
     specs: [
-        './test/specs/firstTest.js'
+        './test/specs/POlestardev.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -50,9 +58,7 @@ export const config = {
     // https://saucelabs.com/platform/platform-configurator
     //
     capabilities: [{
-        browserName: 'chrome'
-    }, {
-        browserName: 'firefox'
+        browserName: 'MicrosoftEdge'
     }],
 
     //
