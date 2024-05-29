@@ -29,7 +29,8 @@ export const config = {
         
     //
     specs: [
-        './test/specs/POlestardev.js'
+        './test/specs/frontend.js',
+        './test/API_Test/**/*.js'
     ],
     // Patterns to exclude.
     exclude: [
